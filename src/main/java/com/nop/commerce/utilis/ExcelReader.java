@@ -1,4 +1,4 @@
-package utilis;
+package com.nop.commerce.utilis;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -21,7 +21,6 @@ public class ExcelReader {
             workbook = new XSSFWorkbook(fis);
             worksheet = workbook.getSheet(sheetName);
             workbook.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

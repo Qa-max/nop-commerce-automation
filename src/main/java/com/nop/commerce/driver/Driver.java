@@ -1,10 +1,11 @@
-package driver;
-import config.ConfigReader;
+package com.nop.commerce.driver;
+import com.nop.commerce.config.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
+
 public class Driver {
     private static WebDriver driver;
     private Driver(){}

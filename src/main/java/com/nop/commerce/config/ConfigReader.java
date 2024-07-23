@@ -1,4 +1,4 @@
-package config;
+package com.nop.commerce.config;
 import java.io.FileInputStream;
 import java.util.Properties;
 
