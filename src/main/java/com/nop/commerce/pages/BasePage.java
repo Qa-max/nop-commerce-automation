@@ -70,7 +70,7 @@ public class BasePage {
         System.out.println(email);
         subscriptionEmailInput.sendKeys(email);
     }
-    public void clickSubscriptionBtn(){
+    public void clickSubscriptionBtn() throws InterruptedException {
         Assert.assertTrue(subscriptionBtn.isEnabled(),"Subscription Button is Not Displayed");
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", subscriptionBtn);
     }
