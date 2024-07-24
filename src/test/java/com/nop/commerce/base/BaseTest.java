@@ -1,7 +1,7 @@
 package com.nop.commerce.base;
 import com.github.javafaker.Faker;
-import config.ConfigReader;
-import driver.Driver;
+import com.nop.commerce.config.ConfigReader;
+import com.nop.commerce.driver.Driver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

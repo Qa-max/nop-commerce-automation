@@ -37,7 +37,6 @@ public class NopCommerceLoginTests extends BaseTest {
         loginPage.clickRememberMeBox();
         loginPage.clickLoginBtn();
         loginPage.enteredInvalidEmail();
-
     }
 
 }

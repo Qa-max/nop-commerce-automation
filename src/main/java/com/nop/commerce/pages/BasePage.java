@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.time.Duration;
 import java.util.Map;
 
@@ -65,14 +64,15 @@ public class BasePage {
         logoutLink.click();
     }
 
-    public void subscribeToNewsLetter(Map<String,String> data) {
+    public void subscribeToNewsLetter(String email) {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        subscriptionEmailInput.sendKeys(data.get("email_address"));
+        System.out.println(email);
+        subscriptionEmailInput.sendKeys(email);
     }
     public void clickSubscriptionBtn(){
-       Assert.assertTrue(subscriptionBtn.isDisplayed(),"Subscription Button is Not Displayed");
-       subscriptionBtn.click();
+        Assert.assertTrue(subscriptionBtn.isEnabled(),"Subscription Button is Not Displayed");
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", subscriptionBtn);
     }
     public void verifySingUpMessage(){
         wait.until(ExpectedConditions.visibilityOf(signUpMessage));

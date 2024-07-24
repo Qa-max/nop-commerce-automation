@@ -6,7 +6,7 @@ import com.nop.commerce.pages.MyAccountPage;
 import com.nop.commerce.pages.RegisterPage;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utilis.ExcelReader;
+import com.nop.commerce.utilis.ExcelReader;
 import java.util.Map;
 
 public class NopCommerceRegistrationTests extends BaseTest {
@@ -14,7 +14,7 @@ public class NopCommerceRegistrationTests extends BaseTest {
 
     @DataProvider(name = "users")
     public Object[][] getData() {
-        ExcelReader excelReader = new ExcelReader("src/main/resources/tast_data/userinfo.xlsx", "users");
+        ExcelReader excelReader = new ExcelReader("src/main/resources/test_data/userinfo.xlsx", "users");
         return excelReader.getData();
     }
 

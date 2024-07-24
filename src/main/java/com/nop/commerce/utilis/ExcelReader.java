@@ -39,7 +39,7 @@ public class ExcelReader {
             for (int j = 0; j < cols; j++) {
                 //each column name is a key
                 XSSFCell cell = worksheet.getRow(i + 1).getCell(j);// might be null sometimes if the cell is empty
-                map.put(worksheet.getRow(0).getCell(j).toString(),
+                map.put(worksheet.getRow(0).getCell(j).toString().trim(),
                         // each cell under column name will be value
                         cell == null  ? "" : cell.toString() );
             }
