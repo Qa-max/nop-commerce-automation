@@ -1,5 +1,6 @@
 package com.nop.commerce.driver;
 import com.nop.commerce.config.ConfigReader;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,12 +22,14 @@ public class Driver {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
                     Map<String, Object> prefs = new HashMap<>();
+                    prefs.put("profile.default_content_settings.popups", 0);
                     prefs.put("autofill.profile_enabled", false);
                     prefs.put("profile.password_manager_enabled", false);
                     prefs.put("profile.default_content_setting_values.notifications", 2);
 
                     options.setExperimentalOption("prefs", prefs);
                     options.addArguments("--disable-popup-blocking");
+                    options.addArguments("--disable-notifications");
 
                     driver = new ChromeDriver(options);
                     driver.manage().window().maximize();

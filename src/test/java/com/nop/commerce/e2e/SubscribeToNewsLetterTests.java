@@ -15,7 +15,7 @@ public class SubscribeToNewsLetterTests extends BaseTest {
     }
 
     @Test(dataProvider = "subscription" )
-    public void subscribeToNewsLetterPositiveTest(Map<String, String> data) {
+    public void subscribeToNewsLetterPositiveTest(Map<String, String> data) throws InterruptedException {
 
         BasePage basePage = new BasePage(driver);
         basePage.subscribeToNewsLetter(data.get("email_address"));
@@ -24,7 +24,7 @@ public class SubscribeToNewsLetterTests extends BaseTest {
     }
 
     @Test
-    public void subscribeToNewsLetterNegativeTest()  {
+    public void subscribeToNewsLetterNegativeTest() throws InterruptedException {
         BasePage basePage = new BasePage(driver);
         String name = faker.name().firstName();
         basePage.subscribeToNewsLetter(name);
